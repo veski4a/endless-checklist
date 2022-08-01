@@ -1,4 +1,11 @@
-<div class="p-4">
+<p-card
+  header="Подготовка за началото на стаж"
+  [style]="{ width: '30rem', 'margin-bottom': '2em' }"
+>
+  <div class="mb-3">
+    <p-progressBar [value]="progressBarValue"></p-progressBar>
+  </div>
+
   <div *ngFor="let category of categories" class="field-checkbox">
     <p-checkbox
       name="group2"
@@ -10,4 +17,9 @@
     ></p-checkbox>
     <label [for]="category.key">{{ category.name }}</label>
   </div>
-</div>
+
+  <ng-template pTemplate="footer">
+    <p-button label="Add item" icon="pi pi-plus"></p-button>
+  </ng-template>
+  <!-- <p-button label="Add item"></p-button> -->
+</p-card>

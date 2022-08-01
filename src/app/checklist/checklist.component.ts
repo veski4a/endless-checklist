@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChecklistComponent implements OnInit {
   selectedCategories: any[];
-
   categories: any[] = [
     {
       name: 'Избиране на места за стажантите и разпределение по местата',
@@ -37,6 +36,16 @@ export class ChecklistComponent implements OnInit {
       key: '12',
     },
   ];
+
+  public get progressBarValue(): number {
+    if (this.selectedCategories == null) return 0;
+
+    const maxValue: number = this.categories.length;
+    const currentValue: number =
+      (this.selectedCategories.length / maxValue) * 100;
+
+    return Math.round(currentValue);
+  }
 
   constructor() {}
 
