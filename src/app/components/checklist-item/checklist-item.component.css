@@ -1,0 +1,3 @@
+:host ::ng-deep .p-checkbox-label-active {
+  text-decoration: line-through;
+}

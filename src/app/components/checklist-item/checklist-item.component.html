@@ -1,0 +1,13 @@
+<div class="field-checkbox">
+  <p-checkbox
+    name="model.group"
+    value="model.value"
+    [label]="model.value"
+    [value]="model.value"
+    [inputId]="model.id"
+    [(ngModel)]="selected"
+    (ngModelChange)="valueChanged($event)"
+    [disabled]="model.disabled"
+  ></p-checkbox>
+  <!-- <label [for]="model.id">{{ model.value }}</label> -->
+</div>

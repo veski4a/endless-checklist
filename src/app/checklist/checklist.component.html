@@ -6,20 +6,14 @@
     <p-progressBar [value]="progressBarValue"></p-progressBar>
   </div>
 
-  <div *ngFor="let category of categories" class="field-checkbox">
-    <p-checkbox
-      name="group2"
-      value="category"
-      [value]="category"
-      [(ngModel)]="selectedCategories"
-      [inputId]="category.key"
-      [disabled]="category.key === 'R'"
-    ></p-checkbox>
-    <label [for]="category.key">{{ category.name }}</label>
+  <div *ngFor="let category of categories">
+    <checklist-item
+      [model]="category"
+      [(selected)]="selectedCategories"
+    ></checklist-item>
   </div>
 
   <ng-template pTemplate="footer">
     <p-button label="Add item" icon="pi pi-plus"></p-button>
   </ng-template>
-  <!-- <p-button label="Add item"></p-button> -->
 </p-card>
