@@ -9,6 +9,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ChecklistItemComponent } from './components/checklist-item/checklist-item.component';
+import { ChecklistItemEditComponent } from './components/checklist-item-edit/checklist-item-edit.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,12 @@ import { ChecklistItemComponent } from './components/checklist-item/checklist-it
     CardModule,
     ProgressBarModule,
   ],
-  declarations: [AppComponent, ChecklistItemComponent, ChecklistComponent],
+  declarations: [
+    AppComponent,
+    ChecklistItemComponent,
+    ChecklistItemEditComponent,
+    ChecklistComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
