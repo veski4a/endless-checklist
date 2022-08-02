@@ -21,9 +21,7 @@ export class ChecklistItemEditComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log('OnInit');
-  }
+  ngOnInit() {}
 
   /**
    * Called when the user clicks the save button
