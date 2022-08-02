@@ -1,3 +1,8 @@
 :host ::ng-deep .p-checkbox-label-active {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
+  opacity: 0.6;
+}
+
+:host ::ng-deep .p-checkbox-checked {
+  opacity: 0.6;
 }
