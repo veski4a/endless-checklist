@@ -1,0 +1,5 @@
+:host ::ng-deep .p-inplace-display {
+  padding: 0%;
+  border-radius: 0%;
+  transition: none;
+}

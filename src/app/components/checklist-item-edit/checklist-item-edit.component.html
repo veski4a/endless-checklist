@@ -5,7 +5,7 @@
       [(ngModel)]="taskName"
       [rows]="1"
       pInputTextarea
-      [autoResize]="autoResize"
+      [autoResize]="taskNameInputAutoResize"
       class="flex-grow-1 mb-2"
     ></textarea>
 
@@ -22,8 +22,8 @@
         type="button"
         label="Add task"
         class="p-button-sm"
-        (click)="add()"
-        [disabled]="isAddButtonDisabled"
+        (click)="save()"
+        [disabled]="isSaveDisabled"
       ></button>
     </div>
   </div>
