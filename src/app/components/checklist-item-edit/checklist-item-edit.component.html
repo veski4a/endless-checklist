@@ -1,0 +1,30 @@
+<div class="p-card p-3 mb-2">
+  <div class="flex flex-column">
+    <textarea
+      placeholder="Task name"
+      [(ngModel)]="taskName"
+      [rows]="1"
+      pInputTextarea
+      [autoResize]="autoResize"
+      class="flex-grow-1 mb-2"
+    ></textarea>
+
+    <div class="flex justify-content-end">
+      <button
+        pButton
+        type="button"
+        label="Cancel"
+        (click)="cancel()"
+        class="p-button-secondary p-button-sm mr-2"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="Add task"
+        class="p-button-sm"
+        (click)="add()"
+        [disabled]="isAddButtonDisabled"
+      ></button>
+    </div>
+  </div>
+</div>

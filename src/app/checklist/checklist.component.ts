@@ -60,4 +60,13 @@ export class ChecklistComponent implements OnInit {
   ngOnInit() {
     // this.selectedCategories = this.categories.slice(1, 3);
   }
+
+  addTask(taskName: string): void {
+    this.categories.push({
+      value: taskName,
+      id: '999',
+    });
+  }
+
+  public closable: boolean = true;
 }
