@@ -15,6 +15,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InplaceModule } from 'primeng/inplace';
+import { ChecklistAddItemComponent } from './components/checklist-add-item/checklist-add-item.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { InplaceModule } from 'primeng/inplace';
     AutoFocus,
     ChecklistItemComponent,
     ChecklistItemEditComponent,
+    ChecklistAddItemComponent,
     ChecklistComponent,
   ],
   bootstrap: [AppComponent],

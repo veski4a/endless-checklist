@@ -1,0 +1,13 @@
+<div class="mt-2">
+  <p-inplace [style]="{ 'min-height': '33px' }" #temp>
+    <ng-template pTemplate="display">
+      <p-button label="Add item" icon="pi pi-plus"></p-button>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <checklist-item-edit
+        (onSave)="addTask($event); temp.deactivate()"
+        (onCancel)="temp.deactivate()"
+      ></checklist-item-edit>
+    </ng-template>
+  </p-inplace>
+</div>
