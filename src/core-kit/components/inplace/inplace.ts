@@ -11,10 +11,45 @@ import {
   TemplateRef,
   QueryList,
   ContentChildren,
+  Directive,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { PrimeTemplate } from 'primeng/api';
+
+// export declare class InplaceTemplate {
+//   template: TemplateRef<any>;
+//   type: string;
+//   name: string;
+//   constructor(template: TemplateRef<any>);
+//   getType(): string;
+//   static ɵfac: i0.ɵɵFactoryDeclaration<InplaceTemplate, never>;
+//   static ɵdir: i0.ɵɵDirectiveDeclaration<
+//     InplaceTemplate,
+//     '[inplaceTemplate]',
+//     never,
+//     { type: 'type'; name: 'inplaceTemplate' },
+//     {},
+//     never,
+//     never,
+//     false
+//   >;
+// }
+
+@Directive({
+  selector: '[pTemplate]',
+  host: {},
+})
+export class InplaceTemplate {
+  @Input() type: string;
+
+  @Input('pTemplate') name: string;
+
+  constructor(public template: TemplateRef<any>) {}
+
+  getType(): string {
+    return this.name;
+  }
+}
 
 @Component({
   selector: 'p-inplaceDisplay',
@@ -37,7 +72,7 @@ export class InplaceContent {}
 @Component({
   selector: 'p-inplace',
   template: `
-        <div [ngClass]="{'p-component': true, 'p-inplace-closable': closable}" [ngStyle]="style" [class]="styleClass">
+        <div [ngClass]="{'p-component': true}" [ngStyle]="style" [class]="styleClass">
             <div class="p-inplace-display" (click)="onActivateClick($event)" tabindex="0" (keydown)="onKeydown($event)"
                 [ngClass]="{'p-disabled':disabled}" *ngIf="!active">
                 <ng-content select="[pInplaceDisplay]"></ng-content>
@@ -46,7 +81,6 @@ export class InplaceContent {}
             <div class="p-inplace-content" *ngIf="active">
                 <ng-content select="[pInplaceContent]"></ng-content>
                 <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
-                <button type="button" [icon]="closeIcon" pButton (click)="onDeactivateClick($event)" *ngIf="closable"></button>
             </div>
         </div>
     `,
@@ -60,8 +94,6 @@ export class InplaceContent {}
 export class Inplace implements AfterContentInit {
   @Input() active: boolean;
 
-  @Input() closable: boolean;
-
   @Input() disabled: boolean;
 
   @Input() preventClick: boolean;
@@ -70,15 +102,11 @@ export class Inplace implements AfterContentInit {
 
   @Input() styleClass: string;
 
-  @Input() closeIcon: string = 'pi pi-times';
-
-  @ContentChildren(PrimeTemplate) templates: QueryList<any>;
+  @ContentChildren(InplaceTemplate) templates: QueryList<any>;
 
   @Output() onActivate: EventEmitter<any> = new EventEmitter();
 
   @Output() onDeactivate: EventEmitter<any> = new EventEmitter();
-
-  hover: boolean;
 
   displayTemplate: TemplateRef<any>;
 
@@ -119,7 +147,6 @@ export class Inplace implements AfterContentInit {
   deactivate(event?: Event) {
     if (!this.disabled) {
       this.active = false;
-      this.hover = false;
       this.onDeactivate.emit(event);
       this.cd.markForCheck();
     }
@@ -136,6 +163,6 @@ export class Inplace implements AfterContentInit {
 @NgModule({
   imports: [CommonModule, ButtonModule],
   exports: [Inplace, InplaceDisplay, InplaceContent, ButtonModule],
-  declarations: [Inplace, InplaceDisplay, InplaceContent],
+  declarations: [Inplace, InplaceDisplay, InplaceContent, InplaceTemplate],
 })
 export class InplaceModule {}
