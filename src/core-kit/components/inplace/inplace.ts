@@ -15,13 +15,12 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { PrimeTemplate } from 'primeng/api';
 
 @Directive({
   selector: '[pTemplate]',
   host: {},
 })
-export class InplaceTemplate {
+export class ComponentTemplate {
   @Input() type: string;
 
   @Input('pTemplate') name: string;
@@ -84,7 +83,7 @@ export class Inplace implements AfterContentInit {
 
   @Input() styleClass: string;
 
-  @ContentChildren(InplaceTemplate) templates: QueryList<any>;
+  @ContentChildren(ComponentTemplate) templates: QueryList<any>;
 
   @Output() onActivate: EventEmitter<any> = new EventEmitter();
 
@@ -149,8 +148,8 @@ export class Inplace implements AfterContentInit {
     InplaceDisplay,
     InplaceContent,
     ButtonModule,
-    InplaceTemplate,
+    ComponentTemplate,
   ],
-  declarations: [Inplace, InplaceDisplay, InplaceContent, InplaceTemplate],
+  declarations: [Inplace, InplaceDisplay, InplaceContent, ComponentTemplate],
 })
 export class InplaceModule {}
