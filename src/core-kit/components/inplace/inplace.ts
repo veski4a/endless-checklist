@@ -15,25 +15,7 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-
-// export declare class InplaceTemplate {
-//   template: TemplateRef<any>;
-//   type: string;
-//   name: string;
-//   constructor(template: TemplateRef<any>);
-//   getType(): string;
-//   static ɵfac: i0.ɵɵFactoryDeclaration<InplaceTemplate, never>;
-//   static ɵdir: i0.ɵɵDirectiveDeclaration<
-//     InplaceTemplate,
-//     '[inplaceTemplate]',
-//     never,
-//     { type: 'type'; name: 'inplaceTemplate' },
-//     {},
-//     never,
-//     never,
-//     false
-//   >;
-// }
+import { PrimeTemplate } from 'primeng/api';
 
 @Directive({
   selector: '[pTemplate]',
@@ -162,7 +144,13 @@ export class Inplace implements AfterContentInit {
 
 @NgModule({
   imports: [CommonModule, ButtonModule],
-  exports: [Inplace, InplaceDisplay, InplaceContent, ButtonModule],
+  exports: [
+    Inplace,
+    InplaceDisplay,
+    InplaceContent,
+    ButtonModule,
+    InplaceTemplate,
+  ],
   declarations: [Inplace, InplaceDisplay, InplaceContent, InplaceTemplate],
 })
 export class InplaceModule {}
