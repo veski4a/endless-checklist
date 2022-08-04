@@ -37,7 +37,7 @@ export class InplaceContent {}
 @Component({
   selector: 'p-inplace',
   template: `
-        <div [ngClass]="{'p-inplace p-component': true, 'p-inplace-closable': closable}" [ngStyle]="style" [class]="styleClass">
+        <div [ngClass]="{'p-component': true, 'p-inplace-closable': closable}" [ngStyle]="style" [class]="styleClass">
             <div class="p-inplace-display" (click)="onActivateClick($event)" tabindex="0" (keydown)="onKeydown($event)"
                 [ngClass]="{'p-disabled':disabled}" *ngIf="!active">
                 <ng-content select="[pInplaceDisplay]"></ng-content>
