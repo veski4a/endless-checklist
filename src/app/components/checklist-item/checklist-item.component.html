@@ -1,15 +1,22 @@
 <div class="p-card py-4 px-3 mb-2">
-  <!-- <div class="field-checkbox"> -->
-  <p-checkbox
-    name="model.group"
-    value="model.value"
-    [label]="model.value"
-    [value]="model.value"
-    [inputId]="model.id"
-    [(ngModel)]="selected"
-    (ngModelChange)="valueChanged($event)"
-    [disabled]="model.disabled"
-  ></p-checkbox>
-  <!-- <label [for]="model.id">{{ model.value }}</label> -->
-  <!-- </div> -->
+  <p-inplace [preventClick]="true" #inPlaceContainer>
+    <ng-template pTemplate="display">
+      <p-checkbox
+        name="model.group"
+        value="model.value"
+        [value]="model.value"
+        [inputId]="model.id"
+        [(ngModel)]="selected"
+        (ngModelChange)="valueChanged($event)"
+        (onChange)="onChange($event)"
+        [disabled]="model.disabled"
+      ></p-checkbox>
+      <label
+        class="p-checkbox-label"
+        [ngClass]="{ 'p-checkbox-label-active': checked }"
+        >{{ model.value }}</label
+      >
+    </ng-template>
+    <ng-template pTemplate="content"> </ng-template>
+  </p-inplace>
 </div>

@@ -26,8 +26,17 @@ export class ChecklistItemComponent {
   @Input() selected: any;
   @Output() selectedChange = new EventEmitter();
 
+  public checked: boolean = false;
+
   public valueChanged(newValue): void {
     this.selected = newValue;
     this.selectedChange.emit(newValue);
+  }
+
+  public onChange(event: any): void {
+    // TODO: Това трябва да не работи по този начин, а да се преправи чекчето да е булево и по друг начин да се сетват маркираните в списъка
+    const found = event.checked.find((element) => element == this.model.value);
+    this.checked = found != null;
+    console.log(this.checked);
   }
 }

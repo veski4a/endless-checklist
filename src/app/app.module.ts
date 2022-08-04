@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { InplaceModule } from '../core-kit/components/inplace/inplace';
 import { AutoFocus } from '../core-kit/directives/auto-focus.directive';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { ChecklistItemComponent } from './components/checklist-item/checklist-item.component';
@@ -14,7 +15,6 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { InplaceModule } from 'primeng/inplace';
 import { ChecklistAddItemComponent } from './components/checklist-add-item/checklist-add-item.component';
 
 @NgModule({
