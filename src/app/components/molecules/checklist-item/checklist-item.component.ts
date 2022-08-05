@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CheckListItemModel } from '../organisms/checklist-item-view/checklist-item-view.component';
+import { Component, Input } from '@angular/core';
+import { CheckListItemModel } from '../checklist-item-view/checklist-item-view.component';
 
 @Component({
   selector: 'checklist-item',

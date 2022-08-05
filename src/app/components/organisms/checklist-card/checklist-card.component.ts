@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckListItemModel } from '../components/organisms/checklist-item-view/checklist-item-view.component';
+import { CheckListItemModel } from '../../molecules/checklist-item-view/checklist-item-view.component';
 
 @Component({
-  selector: 'checklist',
-  templateUrl: './checklist.component.html',
-  styleUrls: ['./checklist.component.css'],
+  selector: 'checklist-card',
+  templateUrl: './checklist-card.component.html',
+  styleUrls: ['./checklist-card.component.css'],
 })
-export class ChecklistComponent implements OnInit {
+export class ChecklistCardComponent implements OnInit {
   categories: CheckListItemModel[] = [
     {
       id: '1',
