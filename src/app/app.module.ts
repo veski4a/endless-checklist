@@ -9,7 +9,7 @@ import { ChecklistComponent } from './checklist/checklist.component';
 import { ChecklistItemComponent } from './components/checklist-item/checklist-item.component';
 import { AddChecklistItemComponent } from './components/organisms/add-checklist-item/add-checklist-item.component';
 import { ChecklistItemEditComponent } from './components/organisms/checklist-item-edit/checklist-item-edit.component';
-import { ChecklistItemViewComponent } from './components/molecules/checklist-item-view/checklist-item-view.component';
+import { ChecklistItemViewComponent } from './components/organisms/checklist-item-view/checklist-item-view.component';
 
 import { CheckboxModule } from 'primeng/checkbox';
 import { CardModule } from 'primeng/card';

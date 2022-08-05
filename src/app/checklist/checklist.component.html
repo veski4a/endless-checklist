@@ -7,10 +7,7 @@
   </div>
 
   <div *ngFor="let category of categories">
-    <checklist-item
-      [model]="category"
-      [(selected)]="selectedCategories"
-    ></checklist-item>
+    <checklist-item [model]="category"></checklist-item>
   </div>
 
   <add-checklist-item (onAdd)="addTask($event)"></add-checklist-item>

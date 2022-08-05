@@ -19,14 +19,32 @@ export interface CheckListItemModel {
   templateUrl: './checklist-item-view.component.html',
   styleUrls: ['./checklist-item-view.component.css'],
 })
+/**
+ * Component representing the checklist item in presentation mode
+ */
 export class ChecklistItemViewComponent implements OnInit {
-  // Checkbox model
+  // Checkbox item model
   @Input() model: CheckListItemModel;
-  // Handler for selecting the checkbox or to monitor the value change
-  @Input() selected: any;
-  @Output() selectedChange = new EventEmitter();
+  // Callback when the user clicks the checkbox
+  @Output() onCheck = new EventEmitter<boolean>();
+  // Callback when the user enter's edit mode
+  @Output() onEdit = new EventEmitter();
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  /**
+   * Called when the checkbox is clicked
+   */
+  public checkboxValueChange(newValue: boolean): void {
+    this.onCheck.emit(newValue);
+  }
+
+  /**
+   * Called when the label showing the task is clicked
+   */
+  public taskNameClick(): void {
+    this.onEdit.emit();
   }
 }

@@ -1,5 +1,5 @@
 <div class="p-card py-4 px-3 mb-2">
-  <p-inplace [preventClick]="true" #inPlaceContainer>
+  <p-inplace [preventClick]="true" #inplace>
     <ng-template pTemplate="display">
       <checklist-item-view [model]="model"></checklist-item-view>
       <!-- <p-checkbox
@@ -28,8 +28,8 @@
     <ng-template pTemplate="content"
       ><checklist-item-edit
         [task]="model.value"
-        (onSave)="saveTask($event); inPlaceContainer.deactivate()"
-        (onCancel)="inPlaceContainer.deactivate()"
+        (onSave)="saveTask($event); inplace.deactivate()"
+        (onCancel)="inplace.deactivate()"
       ></checklist-item-edit
     ></ng-template>
   </p-inplace>
