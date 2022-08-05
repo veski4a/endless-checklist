@@ -4,10 +4,12 @@
       <p-button label="Add item" icon="pi pi-plus"></p-button>
     </ng-template>
     <ng-template pTemplate="content">
-      <checklist-item-edit
-        (onSave)="addTask($event); temp.deactivate()"
-        (onCancel)="temp.deactivate()"
-      ></checklist-item-edit>
+      <div class="p-card p-3 mb-2">
+        <checklist-item-edit
+          (onSave)="addTask($event); temp.deactivate()"
+          (onCancel)="temp.deactivate()"
+        ></checklist-item-edit>
+      </div>
     </ng-template>
   </p-inplace>
 </div>

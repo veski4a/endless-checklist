@@ -13,10 +13,23 @@
       ></p-checkbox>
       <label
         class="p-checkbox-label"
+        (click)="inPlaceContainer.activate()"
+        *ngIf="!checked"
+        >{{ model.value }}</label
+      >
+      <label
+        class="p-checkbox-label"
         [ngClass]="{ 'p-checkbox-label-active': checked }"
+        *ngIf="checked"
         >{{ model.value }}</label
       >
     </ng-template>
-    <ng-template pTemplate="content"> </ng-template>
+    <ng-template pTemplate="content"
+      ><checklist-item-edit
+        [task]="model.value"
+        (onSave)="saveTask($event); inPlaceContainer.deactivate()"
+        (onCancel)="inPlaceContainer.deactivate()"
+      ></checklist-item-edit
+    ></ng-template>
   </p-inplace>
 </div>

@@ -25,6 +25,8 @@ export class ChecklistItemComponent {
   // Handler for selecting the checkbox or to monitor the value change
   @Input() selected: any;
   @Output() selectedChange = new EventEmitter();
+  // Callback when the user edits the task
+  // @Output() onTaskSave = new EventEmitter<string>();
 
   public checked: boolean = false;
 
@@ -38,5 +40,12 @@ export class ChecklistItemComponent {
     const found = event.checked.find((element) => element == this.model.value);
     this.checked = found != null;
     console.log(this.checked);
+  }
+
+  /**
+   * Called when the user adds a task
+   */
+  saveTask(taskName: string): void {
+    this.model.value = taskName;
   }
 }

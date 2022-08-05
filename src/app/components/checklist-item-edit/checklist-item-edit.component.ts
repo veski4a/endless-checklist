@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'checklist-item-edit',
@@ -10,7 +10,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
  */
 export class ChecklistItemEditComponent implements OnInit {
   // Task's name
-  public taskName: string = '';
+  @Input() task: string = '';
   // Whether the task name input box should be auto resized based on the text's length
   public taskNameInputAutoResize: boolean = true;
 
@@ -27,8 +27,8 @@ export class ChecklistItemEditComponent implements OnInit {
    * Called when the user clicks the save button
    */
   public save(): void {
-    this.onSave.emit(this.taskName);
-    this.taskName = '';
+    this.onSave.emit(this.task);
+    this.task = '';
   }
 
   /**
@@ -42,6 +42,6 @@ export class ChecklistItemEditComponent implements OnInit {
    * Getter controlling the save button's disabled property
    */
   public get isSaveDisabled(): boolean {
-    return this.taskName.length == 0;
+    return this.task.length == 0;
   }
 }
