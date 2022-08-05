@@ -1,14 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'checklist-add-item',
-  templateUrl: './checklist-add-item.component.html',
-  styleUrls: ['./checklist-add-item.component.css'],
+  selector: 'add-checklist-item',
+  templateUrl: './add-checklist-item.component.html',
+  styleUrls: ['./add-checklist-item.component.css'],
 })
 /**
  * A component for adding a task in a checklist
  */
-export class ChecklistAddItemComponent implements OnInit {
+export class AddChecklistItemComponent implements OnInit {
   // Callback when the user adds a task
   @Output() onAdd = new EventEmitter<string>();
 
