@@ -1,0 +1,17 @@
+<div class="p-card py-4 px-3 mb-2">
+  <p-inplace [preventClick]="true" #inplace>
+    <ng-template pTemplate="display">
+      <checklist-item-view
+        [model]="model"
+        (onEdit)="inplace.activate()"
+      ></checklist-item-view>
+    </ng-template>
+    <ng-template pTemplate="content"
+      ><checklist-item-edit
+        [task]="model.value"
+        (onSave)="saveTask($event); inplace.deactivate()"
+        (onCancel)="inplace.deactivate()"
+      ></checklist-item-edit
+    ></ng-template>
+  </p-inplace>
+</div>

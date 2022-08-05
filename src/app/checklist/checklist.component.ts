@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CheckListItemModel } from '../components/molecules/checklist-item-view/checklist-item-view.component';
+import { CheckListItemModel } from '../components/organisms/checklist-item-view/checklist-item-view.component';
 
 @Component({
   selector: 'checklist',

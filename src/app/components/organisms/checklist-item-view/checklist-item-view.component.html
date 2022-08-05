@@ -1,13 +1,17 @@
-<p-checkbox
-  name="model.group"
-  [inputId]="model.id"
-  [(ngModel)]="model.checkedOff"
-  (ngModelChange)="checkboxValueChange($event)"
-  [binary]="true"
-></p-checkbox>
-<label
-  class="p-checkbox-label"
-  [ngClass]="{ 'p-checkbox-label-active': model.checkedOff }"
-  (click)="taskNameClick()"
-  >{{ model.value }}</label
->
+<div class="flex">
+  <p-checkbox
+    name="model.group"
+    [inputId]="model.id"
+    [(ngModel)]="model.checkedOff"
+    (ngModelChange)="checkboxValueChange($event)"
+    [binary]="true"
+  ></p-checkbox>
+  <label
+    class="p-checkbox-label"
+    [ngClass]="{
+      'p-checkbox-label-active': model.checkedOff
+    }"
+    (click)="taskNameClick()"
+    >{{ model.value }}</label
+  >
+</div>

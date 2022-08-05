@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CheckListItemModel } from '../molecules/checklist-item-view/checklist-item-view.component';
+import { CheckListItemModel } from '../organisms/checklist-item-view/checklist-item-view.component';
 
 @Component({
   selector: 'checklist-item',
@@ -9,8 +9,6 @@ import { CheckListItemModel } from '../molecules/checklist-item-view/checklist-i
 export class ChecklistItemComponent {
   // Checkbox model
   @Input() model: CheckListItemModel;
-  // Callback when the user edits the task
-  // @Output() onTaskSave = new EventEmitter<string>();
 
   /**
    * Called when the user adds a task
