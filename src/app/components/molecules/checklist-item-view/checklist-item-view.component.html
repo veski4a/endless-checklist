@@ -1,0 +1,14 @@
+<p-checkbox
+  name="model.group"
+  [inputId]="model.id"
+  [(ngModel)]="model.checkedOff"
+  [binary]="true"
+></p-checkbox>
+<label class="p-checkbox-label" (click)="inPlaceContainer.activate()">{{
+  model.value
+}}</label>
+<label
+  class="p-checkbox-label"
+  [ngClass]="{ 'p-checkbox-label-active': model.checkedOff }"
+  >{{ model.value }}</label
+>

@@ -7,7 +7,7 @@ import { AutoFocus } from '../core-kit/directives/auto-focus.directive';
 import { InplaceModule } from '../core-kit/templates/inplace/inplace';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { ChecklistItemComponent } from './components/checklist-item/checklist-item.component';
-import { ChecklistAddItemComponent } from './components/organisms/checklist-add-item/checklist-add-item.component';
+import { AddChecklistItemComponent } from './components/organisms/add-checklist-item/add-checklist-item.component';
 import { ChecklistItemEditComponent } from './components/organisms/checklist-item-edit/checklist-item-edit.component';
 
 import { CheckboxModule } from 'primeng/checkbox';
@@ -16,6 +16,7 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ChecklistItemViewComponent } from './components/molecules/checklist-item-view/checklist-item-view.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     AutoFocus,
     ChecklistItemComponent,
     ChecklistItemEditComponent,
-    ChecklistAddItemComponent,
+    ChecklistItemViewComponent,
+    AddChecklistItemComponent,
     ChecklistComponent,
   ],
   bootstrap: [AppComponent],

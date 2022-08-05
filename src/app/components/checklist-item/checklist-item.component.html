@@ -1,7 +1,8 @@
 <div class="p-card py-4 px-3 mb-2">
   <p-inplace [preventClick]="true" #inPlaceContainer>
     <ng-template pTemplate="display">
-      <p-checkbox
+      <checklist-item-view [model]="model"></checklist-item-view>
+      <!-- <p-checkbox
         name="model.group"
         value="model.value"
         [value]="model.value"
@@ -22,14 +23,14 @@
         [ngClass]="{ 'p-checkbox-label-active': checked }"
         *ngIf="checked"
         >{{ model.value }}</label
-      >
+      > -->
     </ng-template>
     <ng-template pTemplate="content"
-      ><add-checklist-item
+      ><checklist-item-edit
         [task]="model.value"
         (onSave)="saveTask($event); inPlaceContainer.deactivate()"
         (onCancel)="inPlaceContainer.deactivate()"
-      ></add-checklist-item
+      ></checklist-item-edit
     ></ng-template>
   </p-inplace>
 </div>
