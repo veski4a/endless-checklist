@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { InplaceModule } from '../core-kit/components/inplace/inplace';
 import { AutoFocus } from '../core-kit/directives/auto-focus.directive';
+import { InplaceModule } from '../core-kit/templates/inplace/inplace';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { ChecklistItemComponent } from './components/checklist-item/checklist-item.component';
 import { ChecklistItemEditComponent } from './components/checklist-item-edit/checklist-item-edit.component';
