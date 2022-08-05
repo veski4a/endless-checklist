@@ -9,7 +9,7 @@ export interface CheckListItemModel {
   // Item value
   value: string;
   // Wheter the items is checked or not
-  checkedOff: boolean;
+  checkedOff?: boolean;
   // Group that the item belongs to
   group?: string;
 }
