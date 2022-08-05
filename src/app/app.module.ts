@@ -15,7 +15,7 @@ import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ChecklistAddItemComponent } from './components/checklist-add-item/checklist-add-item.component';
+import { ChecklistAddItemComponent } from './components/organisms/checklist-add-item/checklist-add-item.component';
 
 @NgModule({
   imports: [
