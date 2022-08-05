@@ -17,9 +17,9 @@ export class ChecklistAddItemComponent implements OnInit {
   ngOnInit() {}
 
   /**
-   * Called when the user adds a task
+   * Called when the user confirms
    */
-  addTask(taskName: string): void {
+  save(taskName: string): void {
     this.onAdd.emit(taskName);
   }
 }
