@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { CheckListItemModel } from '../../molecules/checklist-item-view/checklist-item-view.component';
 
@@ -61,5 +62,9 @@ export class ChecklistCardComponent implements OnInit {
       value: taskName,
       id: '999',
     });
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.categories, event.previousIndex, event.currentIndex);
   }
 }

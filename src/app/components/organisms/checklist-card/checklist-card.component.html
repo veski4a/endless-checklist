@@ -6,8 +6,11 @@
     <p-progressBar [value]="progressBarValue"></p-progressBar>
   </div>
 
-  <div *ngFor="let category of categories">
-    <checklist-item [model]="category"></checklist-item>
+  <div cdkDropList class="dragdrop-list" (cdkDropListDropped)="drop($event)">
+    <checklist-item
+      *ngFor="let category of categories"
+      [model]="category"
+    ></checklist-item>
   </div>
 
   <add-checklist-item (onAdd)="addTask($event)"></add-checklist-item>
