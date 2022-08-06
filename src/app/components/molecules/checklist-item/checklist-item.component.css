@@ -6,3 +6,7 @@
 :host ::ng-deep .p-checkbox-checked {
   opacity: 0.6;
 }
+
+:host ::ng-deep {
+  cursor: grab;
+}
