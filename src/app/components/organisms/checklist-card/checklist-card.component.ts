@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { CheckListItemModel } from '../../molecules/checklist-item-view/checklist-item-view.component';
+import { CheckListItemModel } from '../../../models/checklist-model';
 
 @Component({
   selector: 'checklist-card',
@@ -42,9 +42,7 @@ export class ChecklistCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    // this.selectedCategories = this.categories.slice(1, 3);
-  }
+  ngOnInit() {}
 
   public get progressBarValue(): number {
     const checkedOffItems = this.categories.filter(

@@ -1,18 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-/**
- * Interface describing an item in a checklist
- */
-export interface CheckListItemModel {
-  // Item id
-  id: string;
-  // Item value
-  value: string;
-  // Wheter the items is checked or not
-  checkedOff?: boolean;
-  // Group that the item belongs to
-  group?: string;
-}
+import { CheckListItemModel } from '../../../models/checklist-model';
 
 @Component({
   selector: 'checklist-item-view',

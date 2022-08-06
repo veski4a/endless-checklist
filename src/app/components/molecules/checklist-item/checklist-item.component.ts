@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CheckListItemModel } from '../checklist-item-view/checklist-item-view.component';
+import { CheckListItemModel } from '../../../models/checklist-model';
 
 @Component({
   selector: 'checklist-item',
