@@ -8,8 +8,8 @@
 
   <div cdkDropList class="dragdrop-list" (cdkDropListDropped)="drop($event)">
     <checklist-item
-      *ngFor="let category of categories"
-      [model]="category"
+      *ngFor="let item of model.items"
+      [model]="item"
     ></checklist-item>
   </div>
 

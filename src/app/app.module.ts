@@ -18,6 +18,7 @@ import { ChecklistItemViewComponent } from './components/molecules/checklist-ite
 import { AddChecklistItemComponent } from './components/molecules/add-checklist-item/add-checklist-item.component';
 import { ChecklistItemEditComponent } from './components/molecules/checklist-item-edit/checklist-item-edit.component';
 import { ChecklistItemComponent } from './components/molecules/checklist-item/checklist-item.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { ChecklistItemComponent } from './components/molecules/checklist-item/ch
   declarations: [
     AppComponent,
     AutoFocus,
+    MainPageComponent,
     ChecklistCardComponent,
     ChecklistItemViewComponent,
     AddChecklistItemComponent,
