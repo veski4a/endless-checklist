@@ -16,7 +16,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ChecklistCardComponent } from './components/organisms/checklist-card/checklist-card.component';
 import { ChecklistItemViewComponent } from './components/molecules/checklist-item-view/checklist-item-view.component';
 import { AddChecklistItemComponent } from './components/molecules/add-checklist-item/add-checklist-item.component';
-import { ChecklistItemEditComponent } from './components/molecules/item-edit/item-edit.component';
+import { ItemEditComponent } from './components/molecules/item-edit/item-edit.component';
 import { ChecklistItemComponent } from './components/molecules/checklist-item/checklist-item.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 
@@ -40,7 +40,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     ChecklistCardComponent,
     ChecklistItemViewComponent,
     AddChecklistItemComponent,
-    ChecklistItemEditComponent,
+    ItemEditComponent,
     ChecklistItemComponent,
   ],
   bootstrap: [AppComponent],

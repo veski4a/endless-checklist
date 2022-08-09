@@ -6,7 +6,9 @@
       </ng-template>
       <ng-template pTemplate="content"
         ><item-edit
-          [task]="model.title"
+          [placeholderText]="'Title'"
+          [value]="model.title"
+          [largeInputTextFont]="true"
           (onSave)="model.title = $event; inplace.deactivate()"
           (onCancel)="inplace.deactivate()"
         ></item-edit
@@ -15,11 +17,21 @@
   <ng-template pTemplate="subtitle">
     <p-inplace #inplace>
       <ng-template pTemplate="display">
-        <div class="p-card-subtitle">{{ model.description }}</div>
+        <div class="p-card-subtitle" *ngIf="model.description.length > 0">
+          {{ model.description }}
+        </div>
+        <div
+          class="p-card-subtitle flex align-items-center"
+          *ngIf="model.description.length == 0"
+        >
+          <i class="pi pi-align-left mr-2"></i>Description
+        </div>
       </ng-template>
       <ng-template pTemplate="content"
         ><item-edit
-          [task]="model.description"
+          [allowSaveOnEmptyValue]="true"
+          [placeholderText]="'Description'"
+          [value]="model.description"
           (onSave)="model.description = $event; inplace.deactivate()"
           (onCancel)="inplace.deactivate()"
         ></item-edit

@@ -12,7 +12,8 @@
     </ng-template>
     <ng-template pTemplate="content"
       ><item-edit
-        [task]="model.value"
+        [placeholderText]="'Task name'"
+        [value]="model.value"
         (onSave)="saveTask($event); inplace.deactivate()"
         (onCancel)="inplace.deactivate()"
       ></item-edit

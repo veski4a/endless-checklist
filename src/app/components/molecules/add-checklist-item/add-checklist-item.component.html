@@ -11,6 +11,8 @@
   <ng-template pTemplate="content">
     <div class="p-card p-3">
       <item-edit
+        [placeholderText]="'Task name'"
+        [saveButtonText]="'Add task'"
         (onSave)="save($event); inplace.deactivate()"
         (onCancel)="inplace.deactivate()"
       ></item-edit>
