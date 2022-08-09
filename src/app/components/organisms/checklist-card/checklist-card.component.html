@@ -5,11 +5,11 @@
         <div class="p-card-title">{{ model.title }}</div>
       </ng-template>
       <ng-template pTemplate="content"
-        ><checklist-item-edit
+        ><item-edit
           [task]="model.title"
           (onSave)="model.title = $event; inplace.deactivate()"
           (onCancel)="inplace.deactivate()"
-        ></checklist-item-edit
+        ></item-edit
       ></ng-template> </p-inplace
   ></ng-template>
   <ng-template pTemplate="subtitle">
@@ -18,11 +18,11 @@
         <div class="p-card-subtitle">{{ model.description }}</div>
       </ng-template>
       <ng-template pTemplate="content"
-        ><checklist-item-edit
+        ><item-edit
           [task]="model.description"
           (onSave)="model.description = $event; inplace.deactivate()"
           (onCancel)="inplace.deactivate()"
-        ></checklist-item-edit
+        ></item-edit
       ></ng-template> </p-inplace
   ></ng-template>
   <div class="mb-3">

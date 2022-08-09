@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'checklist-item-edit',
-  templateUrl: './checklist-item-edit.component.html',
-  styleUrls: ['./checklist-item-edit.component.css'],
+  selector: 'item-edit',
+  templateUrl: './item-edit.component.html',
+  styleUrls: ['./item-edit.component.css'],
 })
 /**
  * Component representing the checklist item in edit mode
  */
-export class ChecklistItemEditComponent implements OnInit {
+export class ItemEditComponent implements OnInit {
   // Task's name
   @Input() task: string = '';
   // Whether the task name input box should be auto resized based on the text's length

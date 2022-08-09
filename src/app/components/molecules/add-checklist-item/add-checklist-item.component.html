@@ -10,10 +10,10 @@
   </ng-template>
   <ng-template pTemplate="content">
     <div class="p-card p-3">
-      <checklist-item-edit
+      <item-edit
         (onSave)="save($event); inplace.deactivate()"
         (onCancel)="inplace.deactivate()"
-      ></checklist-item-edit>
+      ></item-edit>
     </div>
   </ng-template>
 </p-inplace>

@@ -11,11 +11,11 @@
       ></checklist-item-view>
     </ng-template>
     <ng-template pTemplate="content"
-      ><checklist-item-edit
+      ><item-edit
         [task]="model.value"
         (onSave)="saveTask($event); inplace.deactivate()"
         (onCancel)="inplace.deactivate()"
-      ></checklist-item-edit
+      ></item-edit
     ></ng-template>
   </p-inplace>
 </div>
