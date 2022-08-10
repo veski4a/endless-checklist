@@ -19,6 +19,8 @@ export class ItemEditComponent implements OnInit {
   @Input() saveButtonText: string = 'Save';
   // Whether you can save even if the value entered is empty
   @Input() allowSaveOnEmptyValue: boolean = false;
+  // Whether you can save with enter or not
+  @Input() useEnterToSave: boolean = true;
 
   // Whether the value input box should be auto resized based on the text's length
   public valueInputAutoResize: boolean = true;
@@ -54,5 +56,19 @@ export class ItemEditComponent implements OnInit {
     if (this.allowSaveOnEmptyValue) return false;
 
     return this.value.length == 0;
+  }
+
+  /**
+   * Handles the key down event for the enter button
+   */
+  public onKeyDownEnter(event: any): void {
+    if (!this.useEnterToSave) return;
+
+    // if the shift key is not pressed we submit the input
+    // otherwise a new line is added
+    if (!event.shiftKey) {
+      event.preventDefault();
+      this.save();
+    }
   }
 }

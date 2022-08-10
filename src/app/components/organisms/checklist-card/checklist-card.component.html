@@ -34,6 +34,7 @@
           [value]="model.description"
           (onSave)="model.description = $event; inplace.deactivate()"
           (onCancel)="inplace.deactivate()"
+          [useEnterToSave]="false"
         ></item-edit
       ></ng-template> </p-inplace
   ></ng-template>
