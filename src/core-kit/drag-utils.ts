@@ -1,18 +1,20 @@
+export interface OrderedItem {
+  order: number;
+}
+
 /**
- * Moves an item one index in an array to another.
+ * Reorders an item in array
  * @param array Array in which to move the item.
- * @param fromOrder Starting index of the item.
- * @param toOrder Index to which the item should be moved.
+ * @param fromIndex Starting index of the item.
+ * @param toIndex Index to which the item should be moved.
  */
-export function changeOrderInArray<T = any>(
-  array: T[],
-  fromOrder: number,
-  toOrder: number
+export function changeOrderInArray(
+  array: OrderedItem[],
+  fromIndex: number,
+  toIndex: number
 ): void {
-  // TODO: interface instead of any
-  // TODO: Get max order value
-  const from = clamp(fromOrder, array.length - 1);
-  const to = clamp(toOrder, array.length - 1);
+  const from = clamp(fromIndex, array.length - 1);
+  const to = clamp(toIndex, array.length - 1);
 
   if (from === to) {
     return;
@@ -24,9 +26,11 @@ export function changeOrderInArray<T = any>(
   // change the order
   for (let i = from; i !== to; i += delta) {
     array[i] = array[i + delta];
+    array[i].order = i + 1;
   }
 
   array[to] = target;
+  array[to].order = to + 1;
 }
 
 /**

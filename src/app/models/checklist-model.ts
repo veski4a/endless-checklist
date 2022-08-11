@@ -1,7 +1,9 @@
+import { OrderedItem } from '../../core-kit/drag-utils';
+
 /**
  * Interface describing an item in a checklist
  */
-export class CheckListItemModel {
+export class CheckListItemModel implements OrderedItem {
   // Item id
   id: string;
   // Item value

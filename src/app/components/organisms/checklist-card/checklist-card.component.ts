@@ -1,9 +1,7 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 import { Component, Input, OnInit } from '@angular/core';
-import {
-  CheckListItemModel,
-  ChecklistModel,
-} from '../../../models/checklist-model';
+import { changeOrderInArray } from '../../../../core-kit/drag-utils';
+import { ChecklistModel } from '../../../models/checklist-model';
 
 @Component({
   selector: 'checklist-card',
@@ -29,14 +27,20 @@ export class ChecklistCardComponent implements OnInit {
   }
 
   addTask(taskName: string): void {
+    const maxOrderValue = Math.max(...this.model.items.map((o) => o.order));
+
     this.model.items.push({
       value: taskName,
       id: '999',
-      order: 1111,
+      order: maxOrderValue + 1,
     });
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.model.items, event.previousIndex, event.currentIndex);
+    changeOrderInArray(
+      this.model.items,
+      event.previousIndex,
+      event.currentIndex
+    );
   }
 }
