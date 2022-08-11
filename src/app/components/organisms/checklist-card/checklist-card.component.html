@@ -1,56 +1,53 @@
-<!-- <p-card [style]="{ width: '30rem', 'margin-bottom': '2em' }"> -->
-<div class="flex">
-  <p-card class="w-30rem md:w-max">
-    <ng-template pTemplate="title">
-      <p-inplace #inplace>
-        <ng-template pTemplate="display">
-          <div class="p-card-title">{{ model.title }}</div>
-        </ng-template>
-        <ng-template pTemplate="content"
-          ><item-edit
-            [placeholderText]="'Title'"
-            [value]="model.title"
-            [largeInputTextFont]="true"
-            (onSave)="model.title = $event; inplace.deactivate()"
-            (onCancel)="inplace.deactivate()"
-          ></item-edit
-        ></ng-template> </p-inplace
-    ></ng-template>
-    <ng-template pTemplate="subtitle">
-      <p-inplace #inplace>
-        <ng-template pTemplate="display">
-          <div class="p-card-subtitle" *ngIf="model.description.length > 0">
-            {{ model.description }}
-          </div>
-          <div
-            class="p-card-subtitle flex align-items-center"
-            *ngIf="model.description.length == 0"
-          >
-            <i class="pi pi-align-left mr-2"></i>Description
-          </div>
-        </ng-template>
-        <ng-template pTemplate="content"
-          ><item-edit
-            [allowSaveOnEmptyValue]="true"
-            [placeholderText]="'Description'"
-            [value]="model.description"
-            (onSave)="model.description = $event; inplace.deactivate()"
-            (onCancel)="inplace.deactivate()"
-            [useEnterToSave]="false"
-          ></item-edit
-        ></ng-template> </p-inplace
-    ></ng-template>
-    <div class="mb-3">
-      <p-progressBar [value]="progressBarValue"></p-progressBar>
-    </div>
+<p-card>
+  <ng-template pTemplate="title">
+    <p-inplace #inplace>
+      <ng-template pTemplate="display">
+        <div class="p-card-title">{{ model.title }}</div>
+      </ng-template>
+      <ng-template pTemplate="content"
+        ><item-edit
+          [placeholderText]="'Title'"
+          [value]="model.title"
+          [largeInputTextFont]="true"
+          (onSave)="model.title = $event; inplace.deactivate()"
+          (onCancel)="inplace.deactivate()"
+        ></item-edit
+      ></ng-template> </p-inplace
+  ></ng-template>
+  <ng-template pTemplate="subtitle">
+    <p-inplace #inplace>
+      <ng-template pTemplate="display">
+        <div class="p-card-subtitle" *ngIf="model.description.length > 0">
+          {{ model.description }}
+        </div>
+        <div
+          class="p-card-subtitle flex align-items-center"
+          *ngIf="model.description.length == 0"
+        >
+          <i class="pi pi-align-left mr-2"></i>Description
+        </div>
+      </ng-template>
+      <ng-template pTemplate="content"
+        ><item-edit
+          [allowSaveOnEmptyValue]="true"
+          [placeholderText]="'Description'"
+          [value]="model.description"
+          (onSave)="model.description = $event; inplace.deactivate()"
+          (onCancel)="inplace.deactivate()"
+          [useEnterToSave]="false"
+        ></item-edit
+      ></ng-template> </p-inplace
+  ></ng-template>
+  <div class="mb-3">
+    <p-progressBar [value]="progressBarValue"></p-progressBar>
+  </div>
 
-    <div cdkDropList class="dragdrop-list" (cdkDropListDropped)="drop($event)">
-      <checklist-item
-        *ngFor="let item of model.items"
-        [model]="item"
-      ></checklist-item>
-    </div>
+  <div cdkDropList class="dragdrop-list" (cdkDropListDropped)="drop($event)">
+    <checklist-item
+      *ngFor="let item of model.items"
+      [model]="item"
+    ></checklist-item>
+  </div>
 
-    <add-checklist-item (onAdd)="addTask($event)"></add-checklist-item>
-  </p-card>
-</div>
+  <add-checklist-item (onAdd)="addTask($event)"></add-checklist-item>
+</p-card>
