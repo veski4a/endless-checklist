@@ -32,6 +32,7 @@ export class ChecklistCardComponent implements OnInit {
     this.model.items.push({
       value: taskName,
       id: '999',
+      order: 1111,
     });
   }
 

@@ -2,12 +2,12 @@
  * Interface describing an item in a checklist
  */
 export class CheckListItemModel {
-  // Order of the item in the list
-  order?: number;
   // Item id
   id: string;
   // Item value
   value: string;
+  // Order of the item in the list
+  order: number;
   // Wheter the items is checked or not
   checkedOff?: boolean;
   // Group that the item belongs to

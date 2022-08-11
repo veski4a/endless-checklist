@@ -3,3 +3,7 @@
   border-radius: 0%;
   transition: none;
 }
+
+:host ::ng-deep .p-progressbar-determinate .p-progressbar-value-animate {
+  transition: width 0.35s ease-in-out;
+}
