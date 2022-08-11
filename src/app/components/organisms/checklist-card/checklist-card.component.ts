@@ -36,6 +36,12 @@ export class ChecklistCardComponent implements OnInit {
     });
   }
 
+  editTask(taskName: string): void {
+    if (taskName.length == 0) {
+    } else {
+    }
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     changeOrderInArray(
       this.model.items,

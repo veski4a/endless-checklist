@@ -46,6 +46,7 @@
     <checklist-item
       *ngFor="let item of model.items"
       [model]="item"
+      (onEdit)="editTask($event)"
     ></checklist-item>
   </div>
 

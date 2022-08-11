@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CheckListItemModel } from '../../../models/checklist-model';
 
 @Component({
@@ -9,11 +9,13 @@ import { CheckListItemModel } from '../../../models/checklist-model';
 export class ChecklistItemComponent {
   // Checkbox model
   @Input() model: CheckListItemModel;
+  // Callback when the user edits a task
+  @Output() onEdit = new EventEmitter<string>();
 
   /**
-   * Called when the user adds a task
+   * Called when the user edits a task
    */
-  saveTask(taskName: string): void {
-    this.model.value = taskName;
+  save(taskName: string): void {
+    this.onEdit.emit(taskName);
   }
 }

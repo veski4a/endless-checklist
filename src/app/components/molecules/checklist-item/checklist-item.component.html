@@ -12,9 +12,10 @@
     </ng-template>
     <ng-template pTemplate="content"
       ><item-edit
+        [allowSaveOnEmptyValue]="true"
         [placeholderText]="'Task name'"
         [value]="model.value"
-        (onSave)="saveTask($event); inplace.deactivate()"
+        (onSave)="save($event); inplace.deactivate()"
         (onCancel)="inplace.deactivate()"
       ></item-edit
     ></ng-template>
