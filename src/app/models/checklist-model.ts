@@ -28,4 +28,22 @@ export class ChecklistModel {
   public description: string;
   // Items in the list for the user to check off
   public items: CheckListItemModel[];
+
+  /**
+   * Remove an item with index and reorders all other item appropriately
+   */
+  public removeItem(itemIndex: number): void {
+    if (itemIndex < 0 || itemIndex >= this.items.length) return;
+
+    this.items.splice(itemIndex, 1);
+    this.reinitItemsOrder();
+  }
+
+  private reinitItemsOrder() {
+    let order: number = 1;
+    for (let item of this.items) {
+      item.order = order;
+      order++;
+    }
+  }
 }

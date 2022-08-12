@@ -10,12 +10,12 @@ export class ChecklistItemComponent {
   // Checkbox model
   @Input() model: CheckListItemModel;
   // Callback when the user edits a task
-  @Output() onEdit = new EventEmitter<string>();
+  @Output() onEdit = new EventEmitter();
 
   /**
    * Called when the user edits a task
    */
   save(taskName: string): void {
-    this.onEdit.emit(taskName);
+    this.onEdit.emit({ id: this.model.id, value: taskName });
   }
 }

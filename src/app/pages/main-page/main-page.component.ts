@@ -7,11 +7,13 @@ import { ChecklistModel } from '../../models/checklist-model';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  public model: ChecklistModel = {
-    id: '1',
-    title: 'Подготовка за началото на стаж',
-    description: 'Кратко описание...',
-    items: [
+  public model: ChecklistModel = new ChecklistModel();
+
+  constructor() {
+    this.model.id = '1';
+    this.model.title = 'Подготовка за началото на стаж';
+    this.model.description = 'Кратко описание...';
+    this.model.items = [
       {
         id: '1',
         order: 1,
@@ -63,10 +65,8 @@ export class MainPageComponent implements OnInit {
         id: '12',
         order: 12,
       },
-    ],
-  };
-
-  constructor() {}
+    ];
+  }
 
   ngOnInit() {}
 }

@@ -36,9 +36,16 @@ export class ChecklistCardComponent implements OnInit {
     });
   }
 
-  editTask(taskName: string): void {
-    if (taskName.length == 0) {
+  editTask(task: any): void {
+    const itemIndex = this.model.items.findIndex(
+      (element) => element.id == task.id
+    );
+    if (itemIndex == -1) return;
+
+    if (task.value.length == 0) {
+      this.model.removeItem(itemIndex);
     } else {
+      this.model.items[itemIndex].value = task.value;
     }
   }
 
