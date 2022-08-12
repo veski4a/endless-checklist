@@ -1,4 +1,8 @@
-<div class="flex flex-column">
+<div
+  class="flex flex-column"
+  cdkMonitorSubtreeFocus
+  (cdkFocusChange)="cancel()"
+>
   <textarea
     autoFocus
     placeholder="{{ placeholderText }}"

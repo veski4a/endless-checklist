@@ -1,12 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'item-edit',
@@ -38,9 +30,13 @@ export class ItemEditComponent implements OnInit {
   // Callback when the user cancels out of the edit
   @Output() onCancel = new EventEmitter();
 
-  constructor(private eRef: ElementRef) {}
+  constructor() {}
 
-  ngOnInit() {}
+  private init: boolean = false;
+
+  ngOnInit() {
+    this.init = true;
+  }
 
   /**
    * Called when the user clicks the save button
@@ -77,13 +73,6 @@ export class ItemEditComponent implements OnInit {
     if (!event.shiftKey) {
       event.preventDefault();
       this.save();
-    }
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event) {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.cancel();
     }
   }
 }
