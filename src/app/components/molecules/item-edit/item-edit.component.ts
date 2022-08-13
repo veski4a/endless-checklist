@@ -1,12 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { UtilitiesService } from '../../../app.component';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'item-edit',
@@ -38,21 +30,9 @@ export class ItemEditComponent implements OnInit {
   // Callback when the user cancels out of the edit
   @Output() onCancel = new EventEmitter();
 
-  constructor(
-    private eRef: ElementRef,
-    private utilitiesService: UtilitiesService
-  ) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.utilitiesService.documentClickedTarget.subscribe((target) =>
-      this.documentClickListener(target)
-    );
-  }
-
-  documentClickListener(target: any): void {
-    if (this.eRef.nativeElement.contains(target)) console.log('Clicked inside');
-    else console.log('Clicked outside');
-  }
+  ngOnInit() {}
 
   /**
    * Called when the user clicks the save button
