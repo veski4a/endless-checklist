@@ -19,6 +19,7 @@ import { AddChecklistItemComponent } from './components/molecules/add-checklist-
 import { ItemEditComponent } from './components/molecules/item-edit/item-edit.component';
 import { ChecklistItemComponent } from './components/molecules/checklist-item/checklist-item.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     InputTextareaModule,
     InplaceModule,
     DragDropModule,
+    A11yModule,
   ],
   declarations: [
     AppComponent,
