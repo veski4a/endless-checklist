@@ -1,37 +1,36 @@
-<div
-  class="flex flex-column"
-  cdkMonitorSubtreeFocus
-  (cdkFocusChange)="cancel()"
->
-  <textarea
-    autoFocus
-    placeholder="{{ placeholderText }}"
-    [(ngModel)]="value"
-    [rows]="1"
-    pInputTextarea
-    [autoResize]="valueInputAutoResize"
-    class="flex-grow-1 mb-2"
-    [ngClass]="{
-      'large-font-textarea': largeInputTextFont
-    }"
-    (keydown.enter)="onKeyDownEnter($event)"
-  ></textarea>
-
-  <div class="flex justify-content-end">
-    <button
-      pButton
-      type="button"
-      label="Cancel"
-      (click)="cancel()"
-      class="p-button-secondary p-button-sm mr-2"
-    ></button>
-    <button
-      pButton
-      type="button"
-      label="{{ saveButtonText }}"
-      class="p-button-sm"
-      (click)="save()"
-      [disabled]="isSaveDisabled"
-    ></button>
+<div cdkMonitorSubtreeFocus (cdkFocusChange)="focusChange($event)">
+  <!-- tabindex="-1" is needed for the div to be receive focus/blur events
+  otherwise the cdkMonitorSubtreeFocus works only for input controls and not the empty area around them -->
+  <div class="flex flex-column" tabindex="-1">
+    <textarea
+      autoFocus
+      placeholder="{{ placeholderText }}"
+      [(ngModel)]="value"
+      [rows]="1"
+      pInputTextarea
+      [autoResize]="valueInputAutoResize"
+      class="flex-grow-1 mb-2"
+      [ngClass]="{
+        'large-font-textarea': largeInputTextFont
+      }"
+      (keydown.enter)="onKeyDownEnter($event)"
+    ></textarea>
+    <div class="flex justify-content-end">
+      <button
+        pButton
+        type="button"
+        label="Cancel"
+        (click)="cancel()"
+        class="p-button-secondary p-button-sm mr-2"
+      ></button>
+      <button
+        pButton
+        type="button"
+        label="{{ saveButtonText }}"
+        class="p-button-sm"
+        (click)="save()"
+        [disabled]="isSaveDisabled"
+      ></button>
+    </div>
   </div>
 </div>

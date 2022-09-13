@@ -1,3 +1,4 @@
+import { FocusOrigin } from '@angular/cdk/a11y';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -70,5 +71,15 @@ export class ItemEditComponent implements OnInit {
       event.preventDefault();
       this.save();
     }
+  }
+
+  /**
+   * Handles when the user clicks inside the component
+   */
+  public focusChange(origin: FocusOrigin): void {
+    if (origin != null) {
+      return;
+    }
+    this.cancel();
   }
 }
