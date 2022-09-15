@@ -8,6 +8,7 @@ import { ChecklistModel } from '../../models/checklist-model';
 })
 export class MainPageComponent implements OnInit {
   public model: ChecklistModel = new ChecklistModel();
+  public model2: ChecklistModel = new ChecklistModel();
 
   constructor() {
     this.model.id = '1';
@@ -64,6 +65,47 @@ export class MainPageComponent implements OnInit {
         value: 'Попълване на ангажираните лица в стажа в съответната таблица',
         id: '12',
         order: 12,
+      },
+    ];
+
+    this.model2.id = '2';
+    this.model2.title = 'Преди тръгване';
+    this.model2.description = '';
+    this.model2.items = [
+      {
+        id: '1',
+        order: 1,
+        value: 'Спри контакта на пералнята',
+      },
+      {
+        id: '2',
+        order: 2,
+        value: 'Спри печката и аспиратора',
+      },
+      {
+        id: '3',
+        order: 3,
+        value: 'Спри бойлера',
+      },
+      {
+        id: '4',
+        order: 4,
+        value: 'Поливане на цветята',
+      },
+      {
+        id: '5',
+        order: 5,
+        value: 'Спри водата',
+      },
+      {
+        id: '6',
+        order: 6,
+        value: 'Заключване на вратата',
+      },
+      {
+        id: '7',
+        order: 7,
+        value: 'Пускане на СОТ',
       },
     ];
   }
