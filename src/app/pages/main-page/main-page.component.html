@@ -1,14 +1,9 @@
 <div class="flex justify-content-center">
-  <div class="flex">
+
+  <div class="flex" *ngFor="let checklist of checklists">
     <checklist-card
       class="min-w-full md:w-30rem"
-      [model]="model"
-    ></checklist-card>
-  </div>
-  <div class="flex">
-    <checklist-card
-      class="min-w-full md:w-30rem"
-      [model]="model2"
+      [model]="checklist"
     ></checklist-card>
   </div>
 </div>

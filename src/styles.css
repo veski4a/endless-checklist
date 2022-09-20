@@ -3,6 +3,9 @@ body {
   padding: 2em;
   font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica,
     Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+
+  /* TODO: Remove the background colo modifier */
+  background-color: #eff7f7;
 }
 
 .dragdrop-list {

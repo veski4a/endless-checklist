@@ -7,14 +7,14 @@ import { ChecklistModel } from '../../models/checklist-model';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  public model: ChecklistModel = new ChecklistModel();
-  public model2: ChecklistModel = new ChecklistModel();
+  public checklists: Array<ChecklistModel>;
 
   constructor() {
-    this.model.id = '1';
-    this.model.title = 'Подготовка за началото на стаж';
-    this.model.description = 'Кратко описание...';
-    this.model.items = [
+    let item1: ChecklistModel = new ChecklistModel();
+    item1.id = '1';
+    item1.title = 'Подготовка за началото на стаж';
+    item1.description = 'Кратко описание...';
+    item1.items = [
       {
         id: '1',
         order: 1,
@@ -68,10 +68,11 @@ export class MainPageComponent implements OnInit {
       },
     ];
 
-    this.model2.id = '2';
-    this.model2.title = 'Преди тръгване';
-    this.model2.description = '';
-    this.model2.items = [
+    let item2: ChecklistModel = new ChecklistModel();
+    item2.id = '2';
+    item2.title = 'Преди тръгване';
+    item2.description = '';
+    item2.items = [
       {
         id: '1',
         order: 1,
@@ -108,6 +109,8 @@ export class MainPageComponent implements OnInit {
         value: 'Пускане на СОТ',
       },
     ];
+
+    this.checklists.push(item2);
   }
 
   ngOnInit() {}
