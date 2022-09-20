@@ -7,7 +7,7 @@ import { ChecklistModel } from '../../models/checklist-model';
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
-  public checklists: Array<ChecklistModel>;
+  public checklists: Array<ChecklistModel> = new Array<ChecklistModel>();
 
   constructor() {
     let item1: ChecklistModel = new ChecklistModel();
@@ -68,6 +68,8 @@ export class MainPageComponent implements OnInit {
       },
     ];
 
+    this.checklists.push(item1);
+
     let item2: ChecklistModel = new ChecklistModel();
     item2.id = '2';
     item2.title = 'Преди тръгване';
@@ -110,6 +112,13 @@ export class MainPageComponent implements OnInit {
       },
     ];
 
+    this.checklists.push(item2);
+    this.checklists.push(item2);
+    this.checklists.push(item2);
+    this.checklists.push(item2);
+    this.checklists.push(item2);
+    this.checklists.push(item2);
+    this.checklists.push(item2);
     this.checklists.push(item2);
   }
 
