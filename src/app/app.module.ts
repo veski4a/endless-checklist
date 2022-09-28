@@ -20,6 +20,7 @@ import { ItemEditComponent } from './components/molecules/item-edit/item-edit.co
 import { ChecklistItemComponent } from './components/molecules/checklist-item/checklist-item.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { A11yModule } from '@angular/cdk/a11y';
+import { SortablejsModule } from 'ngx-sortablejs';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { A11yModule } from '@angular/cdk/a11y';
     InplaceModule,
     DragDropModule,
     A11yModule,
+    SortablejsModule,
   ],
   declarations: [
     AppComponent,
