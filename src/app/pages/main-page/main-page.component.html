@@ -1,8 +1,13 @@
-<div class="flex flex-wrap">
+<div
+  class="flex flex-wrap"
+  [sortablejs]="checklists"
+  [sortablejsOptions]="{ animation: 150 }"
+>
   <div class="flex" *ngFor="let checklist of checklists">
-    <checklist-card
+    <p-card class="m-2">{{ checklist.title }}, {{ checklist.id }}</p-card>
+    <!-- <checklist-card
       class="min-w-full md:w-24rem"
       [model]="checklist"
-    ></checklist-card>
+    ></checklist-card> -->
   </div>
 </div>

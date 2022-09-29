@@ -113,12 +113,93 @@ export class MainPageComponent implements OnInit {
     ];
 
     this.checklists.push(item2);
+
+    item2 = new ChecklistModel();
+    item2.id = '3';
+    item2.title = 'Преди тръгване';
+    item2.description = '';
+    item2.items = [
+      {
+        id: '1',
+        order: 1,
+        value: 'Спри контакта на пералнята',
+      },
+      {
+        id: '2',
+        order: 2,
+        value: 'Спри печката и аспиратора',
+      },
+      {
+        id: '3',
+        order: 3,
+        value: 'Спри бойлера',
+      },
+      {
+        id: '4',
+        order: 4,
+        value: 'Поливане на цветята',
+      },
+      {
+        id: '5',
+        order: 5,
+        value: 'Спри водата',
+      },
+      {
+        id: '6',
+        order: 6,
+        value: 'Заключване на вратата',
+      },
+      {
+        id: '7',
+        order: 7,
+        value: 'Пускане на СОТ',
+      },
+    ];
+
     this.checklists.push(item2);
-    this.checklists.push(item2);
-    this.checklists.push(item2);
-    this.checklists.push(item2);
-    this.checklists.push(item2);
-    this.checklists.push(item2);
+
+    item2 = new ChecklistModel();
+    item2.id = '4';
+    item2.title = 'Преди тръгване';
+    item2.description = '';
+    item2.items = [
+      {
+        id: '1',
+        order: 1,
+        value: 'Спри контакта на пералнята',
+      },
+      {
+        id: '2',
+        order: 2,
+        value: 'Спри печката и аспиратора',
+      },
+      {
+        id: '3',
+        order: 3,
+        value: 'Спри бойлера',
+      },
+      {
+        id: '4',
+        order: 4,
+        value: 'Поливане на цветята',
+      },
+      {
+        id: '5',
+        order: 5,
+        value: 'Спри водата',
+      },
+      {
+        id: '6',
+        order: 6,
+        value: 'Заключване на вратата',
+      },
+      {
+        id: '7',
+        order: 7,
+        value: 'Пускане на СОТ',
+      },
+    ];
+
     this.checklists.push(item2);
   }
 
