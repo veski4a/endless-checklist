@@ -3,6 +3,18 @@ export interface OrderedItem {
 }
 
 /**
+ * Reorders all items in array
+ * @param array Array to reorder.
+ */
+export function reinitItemsOrder(array: OrderedItem[]) {
+  let order: number = 1;
+  for (let item of array) {
+    item.order = order;
+    order++;
+  }
+}
+
+/**
  * Reorders an item in array
  * @param array Array in which to move the item.
  * @param fromIndex Starting index of the item.

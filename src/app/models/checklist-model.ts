@@ -1,4 +1,4 @@
-import { OrderedItem } from '../../core-kit/drag-utils';
+import { OrderedItem, reinitItemsOrder } from '../../core-kit/drag-utils';
 
 /**
  * Interface describing an item in a checklist
@@ -19,9 +19,11 @@ export class CheckListItemModel implements OrderedItem {
 /**
  * A class representing a single checklist
  */
-export class ChecklistModel {
+export class ChecklistModel implements OrderedItem {
   // Checklist id
   public id: string;
+  // Order of the item in the list
+  order: number;
   // Title of the list
   public title: string;
   // Detailed description
@@ -40,10 +42,6 @@ export class ChecklistModel {
   }
 
   private reinitItemsOrder() {
-    let order: number = 1;
-    for (let item of this.items) {
-      item.order = order;
-      order++;
-    }
+    reinitItemsOrder(this.items);
   }
 }

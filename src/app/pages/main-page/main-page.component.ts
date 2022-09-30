@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  changeOrderInArray,
+  reinitItemsOrder,
+} from '../../../core-kit/drag-utils';
 import { ChecklistModel } from '../../models/checklist-model';
 
 @Component({
@@ -8,10 +12,19 @@ import { ChecklistModel } from '../../models/checklist-model';
 })
 export class MainPageComponent implements OnInit {
   public checklists: Array<ChecklistModel> = new Array<ChecklistModel>();
+  public sortableOptions;
 
   constructor() {
+    this.sortableOptions = {
+      animation: 150,
+      onUpdate: (event: any) => {
+        this.drop(event);
+      },
+    };
+
     let item1: ChecklistModel = new ChecklistModel();
     item1.id = '1';
+    item1.order = 1;
     item1.title = 'Подготовка за началото на стаж';
     item1.description = 'Кратко описание...';
     item1.items = [
@@ -72,6 +85,7 @@ export class MainPageComponent implements OnInit {
 
     let item2: ChecklistModel = new ChecklistModel();
     item2.id = '2';
+    item2.order = 2;
     item2.title = 'Преди тръгване';
     item2.description = '';
     item2.items = [
@@ -116,6 +130,7 @@ export class MainPageComponent implements OnInit {
 
     item2 = new ChecklistModel();
     item2.id = '3';
+    item2.order = 3;
     item2.title = 'Преди тръгване';
     item2.description = '';
     item2.items = [
@@ -160,6 +175,7 @@ export class MainPageComponent implements OnInit {
 
     item2 = new ChecklistModel();
     item2.id = '4';
+    item2.order = 4;
     item2.title = 'Преди тръгване';
     item2.description = '';
     item2.items = [
@@ -204,4 +220,9 @@ export class MainPageComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  drop(event: any) {
+    // TODO: Reorder only the items moved not every item in the array
+    reinitItemsOrder(this.checklists);
+  }
 }
