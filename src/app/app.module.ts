@@ -21,6 +21,7 @@ import { ChecklistItemComponent } from './components/molecules/checklist-item/ch
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { A11yModule } from '@angular/cdk/a11y';
 import { SortablejsModule } from 'ngx-sortablejs';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { SortablejsModule } from 'ngx-sortablejs';
     DragDropModule,
     A11yModule,
     SortablejsModule,
+    FontAwesomeModule,
   ],
   declarations: [
     AppComponent,

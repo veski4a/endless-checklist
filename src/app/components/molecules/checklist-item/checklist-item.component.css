@@ -8,5 +8,20 @@
 }
 
 :host ::ng-deep {
-  cursor: grab;
+  /* cursor: grab; */
+}
+
+.parent-draggable-item {
+  position: relative;
+}
+
+.drag-handle {
+  cursor: move;
+  position: absolute;
+  top: 24px;
+  left: -15px;
+  width: 27px;
+  padding-right: 3px;
+  display: flex;
+  flex-wrap: nowrap;
 }

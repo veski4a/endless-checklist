@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  changeOrderInArray,
-  reinitItemsOrder,
-} from '../../../core-kit/drag-utils';
+import { reinitItemsOrder } from '../../../core-kit/drag-utils';
 import { ChecklistModel } from '../../models/checklist-model';
 
 @Component({

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CheckListItemModel } from '../../../models/checklist-model';
+import { faGripVertical } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'checklist-item',
@@ -11,6 +12,7 @@ export class ChecklistItemComponent {
   @Input() model: CheckListItemModel;
   // Callback when the user edits a task
   @Output() onEdit = new EventEmitter();
+  faCoffee = faGripVertical;
 
   /**
    * Called when the user edits a task
