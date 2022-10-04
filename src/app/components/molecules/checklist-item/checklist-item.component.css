@@ -7,21 +7,17 @@
   opacity: 0.6;
 }
 
-:host ::ng-deep {
-  /* cursor: grab; */
-}
-
-.parent-draggable-item {
-  position: relative;
-}
-
 .drag-handle {
   cursor: move;
   position: absolute;
-  top: 24px;
+  /* top: 24px; */
   left: -15px;
   width: 27px;
   padding-right: 3px;
-  display: flex;
+  display: none;
   flex-wrap: nowrap;
+}
+
+.draggable-item:hover > .drag-handle {
+  display: flex;
 }

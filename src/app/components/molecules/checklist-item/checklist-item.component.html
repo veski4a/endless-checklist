@@ -1,28 +1,26 @@
 <div
-  class="flex draggable-item parent-draggable-item"
+  class="p-card py-3 px-2 mb-2 draggable-item align-items-center"
   cdkDrag
   [cdkDragDisabled]="model.checkedOff"
 >
-  <div class="drag-handle flex" cdkDragHandle>
+  <div class="drag-handle" cdkDragHandle>
     <fa-icon [icon]="faCoffee"></fa-icon>
   </div>
-  <div class="p-card py-3 px-2 mb-2">
-    <p-inplace [preventClick]="true" #inplace>
-      <ng-template pTemplate="display">
-        <checklist-item-view
-          [model]="model"
-          (onEdit)="inplace.activate()"
-        ></checklist-item-view>
-      </ng-template>
-      <ng-template pTemplate="content"
-        ><item-edit
-          [allowSaveOnEmptyValue]="true"
-          [placeholderText]="'Task name'"
-          [value]="model.value"
-          (onSave)="save($event); inplace.deactivate()"
-          (onCancel)="inplace.deactivate()"
-        ></item-edit
-      ></ng-template>
-    </p-inplace>
-  </div>
+  <p-inplace [preventClick]="true" #inplace>
+    <ng-template pTemplate="display">
+      <checklist-item-view
+        [model]="model"
+        (onEdit)="inplace.activate()"
+      ></checklist-item-view>
+    </ng-template>
+    <ng-template pTemplate="content"
+      ><item-edit
+        [allowSaveOnEmptyValue]="true"
+        [placeholderText]="'Task name'"
+        [value]="model.value"
+        (onSave)="save($event); inplace.deactivate()"
+        (onCancel)="inplace.deactivate()"
+      ></item-edit
+    ></ng-template>
+  </p-inplace>
 </div>

@@ -23,7 +23,7 @@ body {
   /* padding: 20px 10px; */
   /* border-bottom: solid 1px #ccc; */
   /* color: rgba(0, 0, 0, 0.87); */
-  /* display: flex; */
+  display: flex;
   /* flex-direction: row; */
   /* align-items: center; */
   /* justify-content: space-between; */
@@ -31,6 +31,9 @@ body {
   /* cursor: grab; */
   /* background: white; */
   /* font-size: 14px; */
+
+  /* Needed when the draggable item has a handle */
+  position: relative;
 }
 
 .cdk-drag-preview {
